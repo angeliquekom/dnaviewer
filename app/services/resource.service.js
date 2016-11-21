@@ -1,11 +1,14 @@
 angular.module('myApp.service', ['ngResource'])
 
-  .factory('DataService', DataService)
+.factory('DataService', DataService)
 
-  function DataService($resource) {
+function DataService($resource) {
 
-    return $resource('fixtures/dnamolecule.json',{ }, {
-      getData: {method:'GET', isArray: false}
+    return $resource('fixtures/dnamolecule.json', {}, {
+        getData: {
+            method: 'GET',
+            isArray: false
+        }
     });
 
-  }
+}

@@ -173,7 +173,7 @@ function MainCtrl($scope, TYPES_MAPPING, DataService) {
                     vm.selected = null;
 
                     $scope.$apply(function() {
-                      vm.data = vm.primeData;
+                        vm.data = vm.primeData;
                     });
 
                     d3.selectAll(".foreground")
@@ -251,10 +251,10 @@ function MainCtrl($scope, TYPES_MAPPING, DataService) {
                 .attr("class", "strand")
                 .attr("transform", function(d) {
                     if (d.data.strand === 1) { //TODO: add function
-                        return "translate(" + [Math.sin(d.endAngle) * (radius - 30 + padAngle), - Math.cos(d.endAngle) * (radius - 30 + padAngle)] + ") rotate(" +
+                        return "translate(" + [Math.sin(d.endAngle) * (radius - 30 + padAngle), -Math.cos(d.endAngle) * (radius - 30 + padAngle)] + ") rotate(" +
                             (d.endAngle < Math.PI / 2 ? d.endAngle + Math.PI / 2 : (d.endAngle > Math.PI) && (d.endAngle < Math.PI + Math.PI / 2) ? d.endAngle + Math.PI / 2 : d.endAngle + Math.PI / 2) * 180 / Math.PI + ")";
                     } else if (d.data.strand === -1) {
-                        return "translate(" + [Math.sin(d.startAngle) * (radius - 30 - padAngle), - Math.cos(d.startAngle) * (radius - 30 - padAngle)] + ") rotate(" +
+                        return "translate(" + [Math.sin(d.startAngle) * (radius - 30 - padAngle), -Math.cos(d.startAngle) * (radius - 30 - padAngle)] + ") rotate(" +
                             (d.startAngle < Math.PI / 2 ? d.startAngle + Math.PI / 2 : (d.startAngle > Math.PI) && (d.startAngle < Math.PI + Math.PI / 2) ? d.startAngle / 2 + Math.PI / 2 : d.startAngle + Math.PI / 2) * 180 / Math.PI + ")";
                     }
                 })

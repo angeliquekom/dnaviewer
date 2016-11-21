@@ -1,43 +1,50 @@
 <form name="featuresTableCtrl.searchForm">
-  <md-input-container class="md-icon-float md-block">
-    <label>Search Pattern</label>
-    <md-icon><i class="material-icons">search</i></md-icon>
-    <input ng-model="featuresTableCtrl.searchKeyword"
-          name="inputString"
-          ng-pattern="featuresTableCtrl.patternReg" type="text">
-    <div ng-messages="featuresTableCtrl.searchForm.inputString.$error" role="alert">
-      <div ng-message="pattern">Invalid Pattern</div>
-    </div>
-  </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+        <label>Search Pattern</label>
+        <md-icon>
+            <i class="material-icons">search</i>
+        </md-icon>
+        <input ng-model="featuresTableCtrl.searchKeyword" name="inputString" ng-pattern="featuresTableCtrl.patternReg" type="text">
+        <div ng-messages="featuresTableCtrl.searchForm.inputString.$error" role="alert">
+            <div ng-message="pattern">Invalid Pattern</div>
+        </div>
+    </md-input-container>
 </form>
 <md-table-container>
-  <table md-table>
-    <thead md-head md-order="featuresTableCtrl.query.order">
-      <tr md-row>
-        <th md-column md-order-by="start"><span>Start</span></th>
-        <th md-column md-order-by="end"><span>End</span></th>
-        <th md-column md-order-by="dnafeature.name"><span>Name</span></th>
-        <th md-column md-order-by="dnafeature.length"><span>Len</span></th>
-        <th md-column md-order-by="dnafeature.pattern.bases">Pattern</th>
-      </tr>
-    </thead>
-    <tbody md-body>
-      <tr md-row ng-repeat="dnafeature in featuresTableCtrl.data | orderBy: featuresTableCtrl.query.order | filter: featuresTableCtrl.searchKeyword">
-        <!-- TODO: inline style to function-->
-        <td md-cell style="border-left:5px solid {{featuresTableCtrl.mapping[dnafeature.dnafeature.category.name].color}}">
-          {{dnafeature.start}}
-        </td>
-        <td md-cell>{{dnafeature.end}}</td>
-        <td md-cell>
-          <img height="30" height="30" src="img/JPEG/{{featuresTableCtrl.mapping[dnafeature.dnafeature.category.name].img}}.jpeg"/>
-          {{dnafeature.dnafeature.name}}
-        </td>
-        <td md-cell>{{dnafeature.dnafeature.length}}</td>
-        <td md-cell class="editable" ng-click="featuresTableCtrl.openEdit(dnafeature)">
-          {{dnafeature.dnafeature.pattern.bases | limitTo: 3 }}...
-          &nbsp;<i class="material-icons">edit</i>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <table md-table>
+        <thead md-head md-order="featuresTableCtrl.query.order">
+            <tr md-row>
+                <th md-column md-order-by="start">
+                    <span>Start</span>
+                </th>
+                <th md-column md-order-by="end">
+                    <span>End</span>
+                </th>
+                <th md-column md-order-by="dnafeature.name">
+                    <span>Name</span>
+                </th>
+                <th md-column md-order-by="dnafeature.length">
+                    <span>Len</span>
+                </th>
+                <th md-column md-order-by="dnafeature.pattern.bases">Pattern</th>
+            </tr>
+        </thead>
+        <tbody md-body>
+            <tr md-row ng-repeat="dnafeature in featuresTableCtrl.data | orderBy: featuresTableCtrl.query.order | filter: featuresTableCtrl.searchKeyword">
+                <!-- TODO: change inline style-->
+                <td md-cell style="border-left:5px solid {{featuresTableCtrl.mapping[dnafeature.dnafeature.category.name].color}}">
+                    {{dnafeature.start}}
+                </td>
+                <td md-cell>{{dnafeature.end}}</td>
+                <td md-cell>
+                    <img height="30" height="30" src="img/JPEG/{{featuresTableCtrl.mapping[dnafeature.dnafeature.category.name].img}}.jpeg"/>
+                    {{dnafeature.dnafeature.name}}
+                </td>
+                <td md-cell>{{dnafeature.dnafeature.length}}</td>
+                <td md-cell class="editable" ng-click="featuresTableCtrl.openEdit(dnafeature)">
+                    {{dnafeature.dnafeature.pattern.bases | limitTo: 3 }}... &nbsp;<i class="material-icons">edit</i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </md-table-container>
