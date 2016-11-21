@@ -1,0 +1,88 @@
+/* app css stylesheet */
+body{
+  background: #fafcfe;
+  color: #3e4855;
+}
+
+md-toolbar{
+  /*color: white;*/
+  position: static;
+}
+
+md-toolbar:not(.md-menu-toolbar){
+  background: -moz-linear-gradient(-65deg,#008fe2 0,#00b29c 100%);
+  background: -webkit-gradient(linear,left top,right bottom,color-stop(0%,#008fe2),color-stop(100%,#00b29c));
+  background: -webkit-linear-gradient(-65deg,#008fe2 0,#00b29c 100%);
+  background: -o-linear-gradient(-65deg,#008fe2 0,#00b29c 100%);
+  background: -ms-linear-gradient(-65deg,#008fe2 0,#00b29c 100%);
+  background: linear-gradient(154deg,#008fe2 0,#00b29c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008fe2', endColorstr='#00b29c', GradientType=1);
+}
+
+.toolbar-title{
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.toolbar-subtitle{
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.component{
+  background: white;
+  min-width: 100%;
+}
+
+.component h3{
+  color: white;
+  z-index: 3;
+  font-size: 11px;
+  text-align: left;
+}
+
+.first{
+  margin-top: 70px;
+}
+
+.component-title-1{
+  background: #00b29c;
+}
+
+.component-title-2{
+  background: #008fe2;
+}
+
+
+table.md-table td.md-cell{
+  font-size: 11px;
+  color: rgba(0,0,0,0.6);
+}
+
+.editable{
+  position:relative;
+  cursor:pointer;
+}
+
+.editable i{
+  opacity: 0;
+  -webkit-transition-property: width; /* Safari */
+  -webkit-transition-duration: 5s; /* Safari */
+  transition-property: width;
+  transition-duration: 5s;
+  font-size: 18px;
+}
+
+.editable:hover i{
+  opacity: 1;
+  color: rgba(0,0,0,0.2);
+}
+
+md-dialog{
+  border-radius: 1px;
+}
+
+.md-dialog-title {
+  color: white;
+  background: #00b29c;
+}
