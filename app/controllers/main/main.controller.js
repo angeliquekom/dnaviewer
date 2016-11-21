@@ -33,6 +33,8 @@ function MainCtrl($scope, TYPES_MAPPING, DataService) {
             // Configuration for mapping type of feature, color, image
             vm.conf = TYPES_MAPPING;
             vm.selected = null;
+
+            // Create visualization
             createVis();
         });
     }
@@ -245,6 +247,7 @@ function MainCtrl($scope, TYPES_MAPPING, DataService) {
                 return a > 90 ? a - 180 : a;
             }
 
+            // Add arrow symbol according strand
             svg.selectAll(".strand")
                 .data(pie(vm.slices))
                 .enter().append("path")

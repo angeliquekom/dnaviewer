@@ -37,6 +37,8 @@ Future extensions:
    permanent at the table of the features
 7) Create from start (with drag n drop functionality) a new diagram
 8) Upload/Download json
+9) Hovering on a feature on the table the related slice at the diagram should
+  be focused.
 
 ## Getting Started
 
