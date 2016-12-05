@@ -1,5 +1,7 @@
 # dnaViewer
 
+![sample](img/sample.png)
+
 The application was implemented using Angular Seed skeleton. The files directory
 has been changed to controllers, components, services and constants.
 Additional tools for the implementation are the below:
